@@ -1,9 +1,9 @@
-#GWidget 
+# GWidget 
 
-***用途***用来维护自定义的view  
+***用途*** 用来维护自定义的view  
 
-##VerticalScrollTextView
-####使用方式
+## VerticalScrollTextView
+#### 使用方式 ####
 * 设置数据<pre><code>public void setList(ArrayList<Hot> list) {
         hotList.clear();
         hotList.addAll(list);
