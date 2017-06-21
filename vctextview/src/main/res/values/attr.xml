@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="vertical_text">
+        <attr name="vTextSize" format="dimension" />
+        <attr name="vTextHeight" format="dimension" />
+        <attr name="vTextColor" format="dimension" />
+        <attr name="vTextHint" format="string"/>
+    </declare-styleable>
+</resources>
