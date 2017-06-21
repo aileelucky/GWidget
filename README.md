@@ -1,8 +1,20 @@
-# GWidget #
-用来维护自定义的view
+#GWidget 
 
-* Red VerticalScrollTextView   垂直滚动view
-##设置数据 
-setList(ArrayList<Hot> list);
-##停止滚动 
-stop();
+***用途***用来维护自定义的view  
+
+##VerticalScrollTextView
+####使用方式
+* 设置数据<pre><code>public void setList(ArrayList<Hot> list) {
+        hotList.clear();
+        hotList.addAll(list);
+        startPosition = 0;
+        stop();//这样可以兼容更新数据
+        start();
+    }
+</code></pre>
+* 停止滚动<pre><code>public void stop() {
+        if (mTimer != null) {
+        mTimer.cancel();
+        mTimer = null;
+        }
+     } </code></pre>
