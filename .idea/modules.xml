@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/GWidget.iml" filepath="$PROJECT_DIR$/GWidget.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/vctextview/vctextview.iml" filepath="$PROJECT_DIR$/vctextview/vctextview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vertical-scroll-textview/vertical-scroll-textview.iml" filepath="$PROJECT_DIR$/vertical-scroll-textview/vertical-scroll-textview.iml" />
     </modules>
   </component>
 </project>

@@ -1,4 +1,4 @@
-package gu.china.com.vctextview;
+package vctextview;
 
 /**
  * Created by GuJiaJia on 2017/6/21.

@@ -1,4 +1,4 @@
-package gu.china.com.vctextview;
+package vctextview;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -18,10 +18,11 @@ import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
-
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import gu.china.com.vertical_scroll_textview.R;
 
 /**
  * Created by GuJiaJia on 2017/6/21.
