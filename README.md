@@ -2,12 +2,12 @@
 [![](https://jitpack.io/v/aileelucky/GWidget.svg)](https://jitpack.io/#aileelucky/GWidget)
 # VerticalScrollTextView
 
-##描述
+## 描述
 自定义一个循环滚动的textview,类似淘宝热点
 ```java
 compile 'com.china.gu:vertical-scroll-textview:1.1.0'
 ```
-##使用方式 ##
+## 使用方式
 * 设置数据
 ```java
 public void setList(ArrayList<Hot> list) {}
@@ -17,7 +17,7 @@ public void setList(ArrayList<Hot> list) {}
 public void stop() {}
 ```
 
-##扩展（xml里面设置）
+## 扩展（xml里面设置）
 ```xml
 <vctextview.VerticalScrollTextView
             android:id="@+id/vst"
