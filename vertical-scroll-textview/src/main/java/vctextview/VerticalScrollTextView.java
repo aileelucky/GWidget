@@ -30,7 +30,7 @@ import gu.china.com.vertical_scroll_textview.R;
  * Tel: 15050261230
  */
 
-public class VerticalScrollTextView extends TextSwitcher implements ViewSwitcher.ViewFactory {
+public class VerticalScrollTextView extends TextSwitcher implements ViewSwitcher.ViewFactory,View.OnClickListener {
 
     private Context context;
 
@@ -46,6 +46,7 @@ public class VerticalScrollTextView extends TextSwitcher implements ViewSwitcher
     private float tvSize;
     private int tvColor;
     private String tvHint;
+    private ItemOnClickListener itemOnClickListener;
 
     public VerticalScrollTextView(Context context) {
         this(context, null);
@@ -103,6 +104,7 @@ public class VerticalScrollTextView extends TextSwitcher implements ViewSwitcher
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setHeight((int) tvHeight);
+        textView.setOnClickListener(this);
         return textView;
     }
 
@@ -124,7 +126,7 @@ public class VerticalScrollTextView extends TextSwitcher implements ViewSwitcher
         start();
     }
 
-    //获取当前显示的position
+    //获取下一个显示的position
     private int getPosition() {
         if (hotList == null) {
             stop();
@@ -141,6 +143,7 @@ public class VerticalScrollTextView extends TextSwitcher implements ViewSwitcher
         }
         return startPosition;
     }
+
 
     public void start() {
         if (hotList == null) {
@@ -161,6 +164,9 @@ public class VerticalScrollTextView extends TextSwitcher implements ViewSwitcher
         }
     }
 
+    public void setItemOnClickListener(ItemOnClickListener itemOnClickListener){
+        this.itemOnClickListener = itemOnClickListener;
+    }
     public void stop() {
         if (mTimer != null) {
             mTimer.cancel();
@@ -183,7 +189,16 @@ public class VerticalScrollTextView extends TextSwitcher implements ViewSwitcher
         }
     };
 
+    @Override
+    public void onClick(View view) {
+        if(itemOnClickListener != null){
+            itemOnClickListener.onClick(startPosition-1,hotList.get(startPosition-1));
+        }
+    }
 
+    public interface ItemOnClickListener{
+        void onClick(int position, Hot hot);
+    }
     class ScrollAnimation extends Animation {
         private final float mFromDegrees;
         private final float mToDegrees;
