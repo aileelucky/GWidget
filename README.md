@@ -19,6 +19,6 @@
 1.自定义字体大小
 <pre><code>verticalTv:vTextSize="15sp"</code></pre>
 
-##V1.1.0更新点##
+## V1.1.0更新点
 1.添加点击事件；
 2.去掉Hot的使用，可以适合任何项目
