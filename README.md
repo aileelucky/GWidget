@@ -1,3 +1,5 @@
+
+[![](https://jitpack.io/v/aileelucky/GWidget.svg)](https://jitpack.io/#aileelucky/GWidget)
 # VerticalScrollTextView
 
 ***描述*** 自定义一个循环滚动的textview,类似淘宝热点
