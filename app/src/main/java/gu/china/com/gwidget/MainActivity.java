@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.View;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import vctextview.Hot;
 import vctextview.VerticalScrollTextView;
@@ -34,10 +35,15 @@ public class MainActivity extends AppCompatActivity {
         newList.add(hot);
         newList.add(hot1);
         newList.add(hot2);
-        vst.setList(newList);
+
+        List<String> stringList = new ArrayList<>();
+        for(int i = 0;i<newList.size();i++){
+            stringList.add(newList.get(i).getContent());
+        }
+        vst.setList(stringList);
         vst.setItemOnClickListener(new VerticalScrollTextView.ItemOnClickListener() {
             @Override
-            public void onClick(int position, Hot hot) {
+            public void onClick(int position, String content) {
                 Log.i("ailee","position="+position+",  Content="+newList.get(position).getContent());
             }
         });

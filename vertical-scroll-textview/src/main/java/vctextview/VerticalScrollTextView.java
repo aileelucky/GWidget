@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -37,7 +38,7 @@ public class VerticalScrollTextView extends TextSwitcher implements ViewSwitcher
     // inAnimation,outAnimation分别构成翻页的进出动画
     private ScrollAnimation inAnimation;
     private ScrollAnimation outAnimation;
-    private ArrayList<Hot> hotList;
+    private ArrayList<String> hotList;
     private int startPosition = 0;
     private String content;
     private Timer mTimer;
@@ -118,7 +119,7 @@ public class VerticalScrollTextView extends TextSwitcher implements ViewSwitcher
     }
 
     //设置数据
-    public void setList(ArrayList<Hot> list) {
+    public void setList(List<String> list) {
         hotList.clear();
         hotList.addAll(list);
         startPosition = 0;
@@ -137,7 +138,7 @@ public class VerticalScrollTextView extends TextSwitcher implements ViewSwitcher
             startPosition = 0;
         }
         if (startPosition < hotList.size()) {
-            content = hotList.get(startPosition).getContent();
+            content = hotList.get(startPosition);
         } else {
             content = "";
         }
@@ -150,7 +151,7 @@ public class VerticalScrollTextView extends TextSwitcher implements ViewSwitcher
             return;
         }
         if (hotList.size() == 1) {
-            setText(hotList.get(0).getContent());
+            setText(hotList.get(0));
             return;
         }
         if (mTimer == null && hotList.size() > 1 && mSwitchTime > 0) {
@@ -197,7 +198,7 @@ public class VerticalScrollTextView extends TextSwitcher implements ViewSwitcher
     }
 
     public interface ItemOnClickListener{
-        void onClick(int position, Hot hot);
+        void onClick(int position, String content);
     }
     class ScrollAnimation extends Animation {
         private final float mFromDegrees;
