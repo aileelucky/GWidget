@@ -5,7 +5,7 @@
 ## 描述
 自定义一个循环滚动的textview,类似淘宝热点
 ```java
-compile 'com.china.gu:vertical-scroll-textview:1.1.0'
+implementation 'com.github.aileelucky:GWidget:V1.1.1'
 ```
 ## 使用方式
 * 设置数据
@@ -32,6 +32,6 @@ public void stop() {}
 ```
 
 ## 更新点 
->v1.1.0
+>v1.1.1
 - 添加点击事件;<br/>
 - 去掉Hot的使用，可以适合任何项目;<br />
